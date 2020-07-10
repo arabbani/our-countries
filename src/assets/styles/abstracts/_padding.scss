@@ -1,0 +1,20 @@
+$count: 10;
+
+$sides: (
+  t: top,
+  r: right,
+  b: bottom,
+  l: left,
+);
+
+@for $index from 1 through $count {
+    .p-#{$index} {
+        padding: #{$index}rem;
+      }
+
+  @each $side, $sideName in $sides {
+    .p#{$side}-#{$index} {
+      margin-#{$sideName}: #{$index}rem;
+    }
+  }
+}
