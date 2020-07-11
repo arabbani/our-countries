@@ -20,7 +20,6 @@ export class CountriesComponent implements OnInit {
   constructor(private countryService: CountryService) { }
 
   ngOnInit(): void {
-
     this.countryService.getAll().subscribe((response) => {
       this.countries = response;
       this.filteredCountries = this.countries.slice(0);

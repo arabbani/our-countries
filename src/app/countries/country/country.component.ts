@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ChangeDetectionStrategy } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { Country } from '../model/country';
 
 @Component({
@@ -7,13 +7,8 @@ import { Country } from '../model/country';
   styleUrls: ['./country.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class CountryComponent implements OnInit {
+export class CountryComponent {
 
   @Input() country: Country;
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }

@@ -1,6 +1,7 @@
-<wc-search-box (search)="searchByName($event)"></wc-search-box>
-<wc-dropdown></wc-dropdown>
-
+<div>
+    <wc-search-box (search)="searchByName($event)"></wc-search-box>
+    <wc-dropdown></wc-dropdown>
+</div>
 <div class="flex">
     <div *ngFor="let country of filteredCountries" class="countries margin-top-3">
         <wc-country [country]="country"></wc-country>
