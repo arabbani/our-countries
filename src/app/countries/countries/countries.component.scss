@@ -1,21 +1,28 @@
-.countries {
-  flex-basis: 4 / 12 * 100%;
-}
 
+.countries {
+  flex-basis: (4 / 12 * 100%) - 2.4;
+  margin-top:3rem;
+} 
+
+@media (max-width: 650px) {
+  .countries {
+    flex-basis: (6 / 12 * 100%) - 2;
+  }
+}
 @media (max-width: 576px) {
   .countries {
     flex-basis: 100%;
   }
+  
 }
-
-@media (max-width: 768px) {
+/*@media (max-width: 768px) {
   .countries {
     flex-basis: 100%;
   }
-}
+}*/
 
-@media (max-width: 992px) {
+/*@media (max-width: 992px) {
   .countries {
     flex-basis: 6 / 12 * 100%;
   }
-}
+}*/

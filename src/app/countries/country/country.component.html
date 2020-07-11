@@ -1,8 +1,14 @@
-<div class="card margin-right-2 relative clickable">
-    <!-- <img [src]="country.flag"> -->
-    <h2 class="margin-bottom-2">{{ country.name }}</h2>
-    <div>Population: {{ country.population }}</div>
-    <div>Region: {{ country.region }}</div>
-    <div>Capital: {{ country.capital }}</div>
-    <a [routerLink]="country.alpha3Code"><span></span></a>
+<div class="card relative clickable">
+    <a [routerLink]="country.alpha3Code" class="anchor-no-style">
+        <div class="card__image_holder">
+            <img class="card__image" [src]="country.flag">
+        </div>
+        <div class="card__details">
+        <h2>{{ country.name }}</h2>
+            <div>Population: <i class="font-light">{{ country.population }}</i></div>
+            <div>Region: <i class="font-light">{{ country.region }}</i></div>
+            <div>Capital: <i class="font-light">{{ country.capital }}</i></div>
+        </div>
+    </a>
+    <!--<a [routerLink]="country.alpha3Code"><span></span></a>-->
 </div>

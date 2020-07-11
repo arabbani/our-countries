@@ -1,26 +1,38 @@
-<button (click)="goBack()">BACK</button>
-<div class="flex">
-    <div class="flag">
-        <!-- <img [src]="country.flag"> -->
+<div class="back-btn-space">
+    <button (click)="goBack()" class="style-btn"><img class="back-arrow" src="assets/img/back-arrow.svg" />Back</button>
+</div>
+<div class="flex ">
+    <div class="flag country-flag">
+         <img class="img-cover" [src]="country.flag"> 
     </div>
-    <div class="country-details margin-left-2">
+    <div class="country-details">
         <h2>{{ country.name }}</h2>
         <div class="flex">
             <div class="country-info">
-                <p>Native Name: {{ country.nativeName }}</p>
-                <p>Population: {{ country.population }}</p>
-                <p>Region: {{ country.region }}</p>
-                <p>Sub Region: {{ country.subregion }}</p>
-                <p>Capital: {{ country.capital }}</p>
+                <p>Native Name: <i class="font-light">{{ country.nativeName }}</i></p>
+                <p>Population: <i class="font-light">{{ country.population }}</i></p>
+                <p>Region: <i class="font-light">{{ country.region }}</i></p>
+                <p>Sub Region: <i class="font-light">{{ country.subregion }}</i></p>
+                <p>Capital: <i class="font-light">{{ country.capital }}</i></p>
             </div>
             <div class="country-info">
-                <p>Top Level Domains: {{ country.topLevelDomain.join(', ') }}</p>
-                <p>Currencies: {{ country.currencies | toString: 'name' }}</p>
-                <p>Languages: {{ country.languages | toString: 'name' }}</p>
+                <p>Top Level Domains: <i class="font-light">{{ country.topLevelDomain.join(', ') }}</i></p>
+                <p>Currencies: <i class="font-light">{{ country.currencies | toString: 'name' }}</i></p>
+                <p>Languages: <i class="font-light">{{ country.languages | toString: 'name' }}</i></p>
             </div>
         </div>
-        <div>
-            <span>Border Countries: </span> {{ getBorderNames() }}
+        <div class="country-border">
+            <!-- <span>Border Countries: </span> {{ getBorderNames() }} -->
+            <span>Border Countries: &nbsp;</span> 
+            <span class="label-btn">China</span> 
+            <span class="label-btn">Pakistan</span>
+            <span class="label-btn">Iran</span>
+            <span class="label-btn">Iran</span>
+            <span class="label-btn">Iran</span>
+            <span class="label-btn">Iran</span>
+            <span class="label-btn">Iran</span>
+            <span class="label-btn">Iran</span>
+
         </div>
     </div>
 </div>

@@ -12,6 +12,13 @@ $breakpoints:
   flex-wrap: wrap;
   width: 100%;
 }
+.flex-between{
+  justify-content: space-between;
+}
+.flex-1{
+  flex:1;
+}
+
 
 @for $width from 1 through $columns {
   $basis: $width / $columns * 100%;
