@@ -1,1 +1,22 @@
-<p>country-details works!</p>
+<div class="flex">
+    <div class="flag">
+        <!-- PLACEHOLER FOR FLAG -->
+    </div>
+    <div class="country-details margin-left-2">
+        <h2>{{ country.name }}</h2>
+        <div class="flex">
+            <div class="country-info">
+                <p>Native Name: {{ country.nativeName }}</p>
+                <p>Population: {{ country.population }}</p>
+                <p>Region: {{ country.region }}</p>
+                <p>Sub Region: {{ country.subregion }}</p>
+                <p>Capital: {{ country.capital }}</p>
+            </div>
+            <div class="country-info">
+                <p>Top Level Domains: {{ country.topLevelDomain.join(', ') }}</p>
+                <p>Currencies: {{ country.currencies | toString: 'name' }}</p>
+                <p>Languages: {{ country.languages | toString: 'name' }}</p>
+            </div>
+        </div>
+    </div>
+</div>

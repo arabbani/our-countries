@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CountriesComponent } from './countries/countries.component';
 import { CountryComponent } from './country/country.component';
 import { CountryDetailsComponent } from './country-details/country-details.component';
+import { CountryResolverService } from './country-resolver.service';
 
 
 const routes: Routes = [
@@ -12,7 +13,10 @@ const routes: Routes = [
   },
   {
     path: 'countries/:countryCode',
-    component: 
+    component: CountryDetailsComponent,
+    resolve: {
+      country: CountryResolverService
+    }
   }
 ];
 

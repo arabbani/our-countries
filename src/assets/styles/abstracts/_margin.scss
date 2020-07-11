@@ -1,23 +1,15 @@
-$count: 10;
+$count: 5;
 
-$sides: (
-  t: top,
-  r: right,
-  b: bottom,
-  l: left,
-);
+$sides: top, right, bottom, left;
 
 @for $index from 1 through $count {
-}
-
-@for $index from 1 through $count {
-  .m-#{$index} {
+  .margin-#{$index} {
     margin: #{$index}rem;
   }
 
-  @each $side, $sideName in $sides {
-    .m#{$side}-#{$index} {
-      margin-#{$sideName}: #{$index}rem;
+  @each $side in $sides {
+    .margin-#{$side}-#{$index} {
+      margin-#{$side}: #{$index}rem;
     }
   }
 }

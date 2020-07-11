@@ -7,7 +7,7 @@ $columns: 12;
 }
 
 @for $width from 1 through $columns {
-	.col-#{$width} {
+	.column-#{$width} {
 		flex-basis: $width / $columns * 100%;
-	}  
+	} 
 }
