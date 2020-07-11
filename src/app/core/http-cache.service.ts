@@ -1,5 +1,6 @@
-import { Injectable } from '@angular/core';
 import { HttpResponse } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+
 
 @Injectable({
   providedIn: 'root'
@@ -9,11 +10,6 @@ export class HttpCacheService {
   private requests: any = {};
 
   constructor() {
-    this.init();
-   }
-
-  private init(): void {
-    console.log('FGHJK')
   }
 
   put(url: string, response: HttpResponse<any>): void {

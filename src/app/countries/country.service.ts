@@ -1,9 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { tap } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { Country } from './country';
-import { Observable, BehaviorSubject } from 'rxjs';
-import { tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -29,8 +29,13 @@ export class CountryService {
   }
 
   getCountryNameByCode(countryCodes: string[]): string {
-    console.log('qq ', this.countries.getValue());
-    this.countries$.subscribe(r => console.log(r));
-    return '';
+    const countries = this.countries.getValue();
+    let names: string[] = [];
+    countries.forEach(country => {
+      if (countryCodes.includes(country.alpha3Code)) {
+        names.push(country.name);
+      }
+    });
+    return names.join(', ');
   }
 }

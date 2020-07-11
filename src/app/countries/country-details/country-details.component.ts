@@ -16,7 +16,6 @@ export class CountryDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.country = this.route.snapshot.data['country'];
-    console.log(this.country);
   }
 
   getBorderNames(): string {
