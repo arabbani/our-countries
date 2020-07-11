@@ -7,7 +7,7 @@ export class ToStringPipe implements PipeTransform {
 
   transform(value: any[], withField: string): unknown {
     let stringArray: string[] = [];
-    value.forEach((element: Object) => {
+    value.forEach((element: any) => {
       stringArray.push(element[withField])
     });
     return stringArray.join(', ');
