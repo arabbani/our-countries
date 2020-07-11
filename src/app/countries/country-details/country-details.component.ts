@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Country } from '../country';
@@ -12,7 +13,7 @@ export class CountryDetailsComponent implements OnInit {
 
   country: Country;
 
-  constructor(private route: ActivatedRoute, private countryService: CountryService) { }
+  constructor(private route: ActivatedRoute, private countryService: CountryService, private location: Location) { }
 
   ngOnInit(): void {
     this.country = this.route.snapshot.data['country'];
@@ -20,6 +21,10 @@ export class CountryDetailsComponent implements OnInit {
 
   getBorderNames(): string {
     return this.countryService.getCountryNameByCode(this.country.borders);
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 
 }
