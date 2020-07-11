@@ -1,9 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
-import { tap } from 'rxjs/operators';
+import { BehaviorSubject, Observable, of } from 'rxjs';
+import { take, tap } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
-import { Country } from './country';
+import { Country } from './model/country';
 
 @Injectable({
   providedIn: 'root'
@@ -38,4 +38,5 @@ export class CountryService {
     });
     return names.join(', ');
   }
+
 }

@@ -4,12 +4,12 @@ $sides: top, right, bottom, left;
 
 @for $index from 1 through $count {
     .padding-#{$index} {
-        padding: #{$index}rem;
+        padding: #{$index}rem !important;
       }
 
   @each $side in $sides {
     .padding-#{$side}-#{$index} {
-      padding-#{$side}: #{$index}rem;
+      padding-#{$side}: #{$index}rem !important;
     }
   }
 }

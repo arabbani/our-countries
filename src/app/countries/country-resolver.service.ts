@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/router';
 import { Observable, of, EMPTY } from 'rxjs';
-import { Country } from './country';
+import { Country } from './model/country';
 import { CountryService } from './country.service';
 import { tap, take, mergeMap } from 'rxjs/operators';
 

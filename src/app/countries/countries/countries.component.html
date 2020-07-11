@@ -1,5 +1,7 @@
+<input [formControl]="searchControl">
+
 <div class="flex">
-    <div *ngFor="let country of countries" class="countries margin-top-3">
+    <div *ngFor="let country of filteredCountries" class="countries margin-top-3">
         <wc-country [country]="country"></wc-country>
     </div>
 </div>
