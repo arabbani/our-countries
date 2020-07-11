@@ -18,6 +18,8 @@ export class CachingInterceptor implements HttpInterceptor {
 
     const cachedResponse: HttpResponse<any> | undefined = this.httpCacheService.get(req.url);
 
+    console.log('LOCAL ', cachedResponse);
+
     if (cachedResponse) {
       return of(cachedResponse);
     }
@@ -26,6 +28,7 @@ export class CachingInterceptor implements HttpInterceptor {
       .pipe(
         tap(event => {
           if (event instanceof HttpResponse) {
+            console.log('DATA ', event);
             this.httpCacheService.put(req.url, event);
           }
         })
