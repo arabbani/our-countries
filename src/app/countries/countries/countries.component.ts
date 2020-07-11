@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
-import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
-import { Country } from '../model/country';
 import { CountryService } from '../country.service';
+import { Country } from '../model/country';
 
 @Component({
   selector: 'wc-countries',
@@ -13,24 +11,29 @@ export class CountriesComponent implements OnInit {
 
   countries: Country[];
   filteredCountries: Country[];
-  searchControl: FormControl;
+
+  searchCriteria = {
+    name: '',
+    region: ''
+  };
 
   constructor(private countryService: CountryService) { }
 
   ngOnInit(): void {
-    this.searchControl = new FormControl();
+
     this.countryService.getAll().subscribe((response) => {
       this.countries = response;
       this.filteredCountries = this.countries.slice(0);
     });
+  }
 
-    this.searchControl.valueChanges
-      .pipe(
-        debounceTime(200),
-        distinctUntilChanged()
-      ).subscribe(searchTerm => {
-        this.filteredCountries = this.countries.filter(country => country.name.toLowerCase().includes(searchTerm));
-      })
+  searchByName(search: string): void {
+    this.searchCriteria.name = search;
+    this.filter();
+  }
+
+  filter(): void {
+    this.filteredCountries = this.countries.filter(country => country.name.toLowerCase().includes(this.searchCriteria.name));
   }
 
 }

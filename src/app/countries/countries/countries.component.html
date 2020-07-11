@@ -1,4 +1,5 @@
-<input [formControl]="searchControl">
+<wc-search-box (search)="searchByName($event)"></wc-search-box>
+<wc-dropdown></wc-dropdown>
 
 <div class="flex">
     <div *ngFor="let country of filteredCountries" class="countries margin-top-3">
