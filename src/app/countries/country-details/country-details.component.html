@@ -18,5 +18,8 @@
                 <p>Languages: {{ country.languages | toString: 'name' }}</p>
             </div>
         </div>
+        <div>
+            <span>Border Countries: </span> {{ getBorderNames() }}
+        </div>
     </div>
 </div>

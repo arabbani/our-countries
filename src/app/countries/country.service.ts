@@ -27,4 +27,10 @@ export class CountryService {
   getByCode(countryCode: string): Observable<Country> {
     return this.http.get<Country>(`${this.apiUrl}/alpha/${countryCode}`);
   }
+
+  getCountryNameByCode(countryCodes: string[]): string {
+    console.log('qq ', this.countries.getValue());
+    this.countries$.subscribe(r => console.log(r));
+    return '';
+  }
 }

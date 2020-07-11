@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Country } from '../country';
+import { CountryService } from '../country.service';
 
 @Component({
   selector: 'wc-country-details',
@@ -11,11 +12,15 @@ export class CountryDetailsComponent implements OnInit {
 
   country: Country;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private countryService: CountryService) { }
 
   ngOnInit(): void {
     this.country = this.route.snapshot.data['country'];
     console.log(this.country);
+  }
+
+  getBorderNames(): string {
+    return this.countryService.getCountryNameByCode(this.country.borders);
   }
 
 }
