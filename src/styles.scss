@@ -3,12 +3,52 @@
 @import 'assets/styles/main';
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
 
+$dark-secondary: #293846;
+$dark-white: #fff;
+$dark-shadow: #2c3235;
+
 *{
     box-sizing:border-box;
 }
 body{
     font-family: 'Lato', sans-serif;
     color: #111517;
+}
+
+body.dark-mode{
+    color: #fff;
+    background: #202c37;
+    .header, .dark-mode-bg, .label-btn{
+        background: $dark-secondary;
+        color:#fff;
+    }
+    .svg-white path, .back-arrow polygon{
+        fill:$dark-white;
+    }
+    .dropdown__input:before{
+        border-color: #fff transparent transparent transparent;
+    }
+    .dropdown__input.active:before{
+        border-color:transparent transparent #fff transparent;
+    }
+    input{
+        color: #fff;
+    }
+    .header{
+        box-shadow:0 2px 8px $dark-shadow;
+    }
+    .dark-shadow, .label-btn{
+        box-shadow: 0 0 6px $dark-shadow;
+    }
+    .input-search:focus, .dropdown__input.active {
+        box-shadow: 0 0 12px $dark-shadow;
+    }
+    .card{
+        box-shadow: 0 0 8px $dark-shadow;
+    }
+    .style-btn:hover{
+        box-shadow: 0 0 12px $dark-shadow;
+    }
 }
 button{
     cursor: pointer;
@@ -26,16 +66,19 @@ button{
 .max{
     @include maxMargin;
 }
-.max-830{
-    max-width:830px;
-}
 .header{
-    height:52px;
     box-shadow:0 2px 8px rgba(44, 50, 53, 0.05);
 }
-.countries{
+.header__position{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height:52px;
+}
+.card{
     overflow: hidden;
     border-radius:4px;
+    height:100%;
     box-shadow:0 0 8px rgba(44, 50, 53, 0.12);
     transition: box-shadow .25s, transform .25s;
     &:hover{
@@ -54,6 +97,16 @@ i.font-light{
 }
 .back-btn-space{
     padding:2rem 0 4rem;
+}
+.mode-svg{
+    width:14px;
+    height:14px;
+    position: relative;
+    top: 2px;
+    left: -12px;
+}
+.svg-color path{
+    fill:#000;
 }
 @mixin btnStyle {
     background: #fff;
@@ -85,6 +138,7 @@ i.font-light{
 }
 .back-arrow{
     width:15px;
+    height:15px;
     vertical-align: top;
     margin-right:10px;
 }
@@ -102,6 +156,7 @@ i.font-light{
 .pr-20{
     padding-right:2rem;
 }
+
 
 
 @media (max-width: 576px) {

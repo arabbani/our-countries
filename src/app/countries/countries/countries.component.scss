@@ -1,12 +1,25 @@
 
 .countries {
-  flex-basis: (4 / 12 * 100%) - 2.4;
-  margin-top:3rem;
-} 
-
+  // flex-basis: (4 / 12 * 100%) - 2.4;
+  flex-basis:33.33%;
+  padding:2rem;
+}
+.countries-container{
+  margin-top:1rem;
+}
+.flex-row{
+  display: flex;
+  flex-wrap: wrap;
+  margin-left:-2rem;
+  margin-right:-2rem;
+}
+.max-830{
+  max-width:830px;
+}
 @media (max-width: 650px) {
   .countries {
-    flex-basis: (6 / 12 * 100%) - 2;
+    // flex-basis: (6 / 12 * 100%) - 2;
+    flex-basis:50%;
   }
 }
 @media (max-width: 576px) {
