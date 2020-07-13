@@ -1,25 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'wc-dropdown',
   templateUrl: './dropdown.component.html',
   styleUrls: ['./dropdown.component.scss']
 })
-export class DropdownComponent implements OnInit {
+export class DropdownComponent {
 
-  constructor() { }
+  @Output() filterRegion = new EventEmitter<string>();
 
-  showDrop: boolean = false;
-  showActive: boolean = false;
-  showDropEvent(){
-      this.showDrop = !this.showDrop;       
-      this.showActive = !this.showActive;       
+  showDropdownMenu: boolean = false;
+  isDropdownActive: boolean = false;
+
+  regions: string[] = ['Africa', 'Americas', 'Asia', 'Europe', 'Ocenia'];
+
+  toggleDropdown(){
+      this.showDropdownMenu = !this.showDropdownMenu;       
+      this.isDropdownActive = !this.isDropdownActive;       
   }
-    
-  ngOnInit(): void {
-    
-    
 
+  onSelect(region: string): void {
+    this.filterRegion.emit(region);
   }
 
 }
