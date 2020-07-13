@@ -22,7 +22,7 @@ export class CountriesComponent implements OnInit {
   ngOnInit(): void {
     this.countryService.getAll().subscribe((response) => {
       this.countries = response;
-      console.log(this.countries);
+      //console.log(this.countries);
       this.filteredCountries = this.countries.slice(0);
     });
   }
@@ -38,7 +38,7 @@ export class CountriesComponent implements OnInit {
   }
 
   filter(): void {
-    console.log(this.searchCriteria);
+    //console.log(this.searchCriteria);
     this.filteredCountries = this.countries.filter(country => {
       return country.name.toLowerCase().includes(this.searchCriteria.name.toLowerCase()) && country.region.toLowerCase().includes(this.searchCriteria.region.toLowerCase());
     });

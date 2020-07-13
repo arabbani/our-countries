@@ -17,7 +17,7 @@
                 <p>Population: <i class="font-light">{{ country.population }}</i></p>
                 <p>Region: <i class="font-light">{{ country.region }}</i></p>
                 <p>Sub Region: <i class="font-light">{{ country.subregion }}</i></p>
-                <p>Capital: <i class="font-light">{{ country.capital }}</i></p>
+                <p *ngIf="country.capital">Capital: <i class="font-light">{{ country.capital }}</i></p>
             </div>
             <div class="country-info">
                 <p>Top Level Domains: <i class="font-light">{{ country.topLevelDomain.join(', ') }}</i></p>
@@ -25,8 +25,8 @@
                 <p>Languages: <i class="font-light">{{ country.languages | toString: 'name' }}</i></p>
             </div>
         </div>
-        <div class="country-border">
-            <span>Border Countries: &nbsp;</span> 
+        <div class="country-border" *ngIf="getBorderCountries().length >= 1">
+            <span>Border Countries: &nbsp;</span>
             <span *ngFor="let borderCountry of getBorderCountries()" class="label-btn">{{ borderCountry }}</span> 
         </div>
     </div>

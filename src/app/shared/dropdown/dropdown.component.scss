@@ -13,6 +13,7 @@
     @include drop-common;
     transition: box-shadow .25s;
     white-space: nowrap;
+    min-width:152px;
     &.active{
         box-shadow:0 0 12px rgba(44, 50, 53, 0.18);
         &:before{
@@ -56,12 +57,15 @@
         visibility: visible;
     }
     li{
-        padding:5px 15px;
         display: block;
-        cursor: pointer;
-        transition: transform .25s;
-        &:hover{
-            transform: translateX(4px);
+        a{
+            padding:5px 15px;    
+            display: block;
+            transition: transform .25s;
+            cursor: pointer;
+            &:hover{
+                transform: translateX(4px);
+            }
         }
     }
 }
