@@ -5,6 +5,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Prerequisite
 
 You need to have nodejs installed on your machine. Download nodejs from `https://nodejs.org/en/`.
+
 Also install Angular CLI using npm.
 
 ```shell
