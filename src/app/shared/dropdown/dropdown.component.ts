@@ -1,9 +1,10 @@
-import { Component, OnInit, Output, EventEmitter} from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'wc-dropdown',
   templateUrl: './dropdown.component.html',
-  styleUrls: ['./dropdown.component.scss']
+  styleUrls: ['./dropdown.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DropdownComponent {
 
