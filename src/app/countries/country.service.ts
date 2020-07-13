@@ -28,7 +28,7 @@ export class CountryService {
     return this.http.get<Country>(`${this.apiUrl}/alpha/${countryCode}`);
   }
 
-  mapCountryCodesToCountryDetails(countryCodes: string[]): string[] {
+  mapCountryCodesToCountryDetails(countryCodes: string[]): Country[] {
     const countries = this.countries.getValue();
     let borderCountries: string[] = [];
     countries.forEach(country => {
