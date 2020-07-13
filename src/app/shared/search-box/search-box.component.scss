@@ -1,4 +1,4 @@
-.input-search{
+.input-search {
     width:100%;
     max-width:410px;
     border:0;
@@ -12,7 +12,7 @@
         box-shadow:0 0 12px rgba(44, 50, 53, 0.18);
     }
 }
-.search-icon{
+.search-icon {
     position: absolute;
     top: 5px;
     left: 27px;
@@ -20,16 +20,16 @@
     margin: auto;
 }
 
-@media(min-width:577px){
-    .search-right-space{
+@media(min-width:577px) {
+    .search-right-space {
         padding-right:20px;
     }
 }
-@media(max-width:576px){
-    .input-search{
+@media(max-width:576px) {
+    .input-search {
         max-width:100%; 
     }
-    .search-right-space{
+    .search-right-space {
         margin-bottom:20px;
     }
 }

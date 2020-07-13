@@ -28,7 +28,7 @@ export class CountryService {
     return this.http.get<Country>(`${this.apiUrl}/alpha/${countryCode}`);
   }
 
-  getCountryNameByCode(countryCodes: string[]): string {
+  getCountryNameByCode(countryCodes: string[]): string[] {
     const countries = this.countries.getValue();
     let names: string[] = [];
     countries.forEach(country => {
@@ -36,7 +36,7 @@ export class CountryService {
         names.push(country.name);
       }
     });
-    return names.join(', ');
+    return names;
   }
 
 }

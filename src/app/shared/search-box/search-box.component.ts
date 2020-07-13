@@ -13,8 +13,6 @@ export class SearchBoxComponent implements OnInit {
 
   searchControl = new FormControl();
 
-  constructor() { }
-
   ngOnInit(): void {
     this.searchControl.valueChanges
       .pipe(

@@ -26,17 +26,8 @@
             </div>
         </div>
         <div class="country-border">
-            <!-- <span>Border Countries: </span> {{ getBorderNames() }} -->
             <span>Border Countries: &nbsp;</span> 
-            <span class="label-btn">China</span> 
-            <span class="label-btn">Pakistan</span>
-            <span class="label-btn">Iran</span>
-            <span class="label-btn">Iran</span>
-            <span class="label-btn">Iran</span>
-            <span class="label-btn">Iran</span>
-            <span class="label-btn">Iran</span>
-            <span class="label-btn">Iran</span>
-
+            <span *ngFor="let borderCountry of getBorderCountries()" class="label-btn">{{ borderCountry }}</span> 
         </div>
     </div>
 </div>

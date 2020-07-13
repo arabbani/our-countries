@@ -2,7 +2,7 @@
 <div class="header">
     <div class="container">
         <div class="max max-830 header__position">
-            <a href="" (click)="$event.preventDefault(); modeToggle()" class="anchor-no-style">
+            <a href="" (click)="toggleTheme($event)" class="anchor-no-style">
                 <svg viewBox="0 0 24.8 23.7" class="mode-svg svg-color svg-white">
                     <path d="M12.5,23.7C5.6,23.7,0,18.1,0,11.2C0,6.5,2.6,2.3,6.8,0.1C7.2-0.1,7.8,0,8.1,0.5C8.2,0.7,8.2,1,8.2,1.2C8.1,1.9,8,2.5,8,3.2
                     C8,9,12.7,13.7,18.5,13.7c1.7,0,3.3-0.4,4.8-1.2c0.5-0.3,1.1-0.1,1.3,0.4c0.1,0.2,0.1,0.4,0.1,0.7C23.6,19.5,18.5,23.7,12.5,23.7z
@@ -14,8 +14,11 @@
     </div>
 </div>
 <!-- HEADER -->
+
+<!-- MAIN CONTENT -->
 <div class="main">
     <div class="container">
         <router-outlet></router-outlet>
     </div>
 </div>
+<!-- MAIN CONTENT -->

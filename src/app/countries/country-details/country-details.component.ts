@@ -19,7 +19,7 @@ export class CountryDetailsComponent implements OnInit {
     this.country = this.route.snapshot.data['country'];
   }
 
-  getBorderNames(): string {
+  getBorderCountries(): string[] {
     return this.countryService.getCountryNameByCode(this.country.borders);
   }
 

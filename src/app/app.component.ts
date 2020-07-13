@@ -6,12 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  
-  ngOnInit(): void {
-  }
 
-  modeToggle(){
-    //this.document.body.classList.add('test');
+  toggleTheme(event: any): void {
+    event.preventDefault();
     document.getElementsByTagName('body')[0].classList.toggle('dark-mode');
   }
 

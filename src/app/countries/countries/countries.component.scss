@@ -1,6 +1,5 @@
 
 .countries {
-  // flex-basis: (4 / 12 * 100%) - 2.4;
   flex-basis:33.33%;
   padding:2rem;
 }
@@ -18,7 +17,6 @@
 }
 @media (max-width: 650px) {
   .countries {
-    // flex-basis: (6 / 12 * 100%) - 2;
     flex-basis:50%;
   }
 }
@@ -28,14 +26,3 @@
   }
   
 }
-/*@media (max-width: 768px) {
-  .countries {
-    flex-basis: 100%;
-  }
-}*/
-
-/*@media (max-width: 992px) {
-  .countries {
-    flex-basis: 6 / 12 * 100%;
-  }
-}*/
