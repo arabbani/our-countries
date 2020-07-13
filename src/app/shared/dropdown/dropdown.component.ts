@@ -13,17 +13,12 @@ export class DropdownComponent {
   isDropdownActive: boolean = false;
 
   regions: string[] = ['Africa', 'Americas', 'Asia', 'Europe', 'Ocenia'];
-  selectedRegions: string = "Filter By Region";
-
-  /*toggleDropdown(e: Event){
-      console.log('Clicked outside:', e);
-      this.showDropdownMenu = !this.showDropdownMenu;       
-      this.isDropdownActive = !this.isDropdownActive;       
-  }*/
+  
+  dropdownLabel: string = 'Filter By Region';
 
   onSelect(region: string): void {
     this.filterRegion.emit(region);
-    this.selectedRegions = region ? region : "All";
+    this.dropdownLabel = region ? region : 'All';
     this.showDropdownMenu = false;       
     this.isDropdownActive = false; 
   }
