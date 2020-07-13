@@ -24,7 +24,7 @@ export class CountryDetailsComponent implements OnInit {
     
   }
 
-  getBorderCountries(): string[] {
+  getBorderCountries(): Country[] {
     return this.countryService.mapCountryCodesToCountryDetails(this.country.borders);
   }
 
