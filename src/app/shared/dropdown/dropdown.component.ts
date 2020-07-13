@@ -11,7 +11,6 @@ export class DropdownComponent {
   @Output() filterRegion = new EventEmitter<string>();
 
   showDropdownMenu: boolean = false;
-  isDropdownActive: boolean = false;
 
   regions: string[] = ['Africa', 'Americas', 'Asia', 'Europe', 'Ocenia'];
   dropdownLabel: string = 'Filter By Region';
@@ -19,8 +18,7 @@ export class DropdownComponent {
   onSelect(region: string): void {
     this.filterRegion.emit(region);
     this.dropdownLabel = region ? region : 'All';
-    this.showDropdownMenu = false;       
-    this.isDropdownActive = false; 
+    this.showDropdownMenu = false;
   }
 
 }
