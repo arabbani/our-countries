@@ -14,7 +14,6 @@ export class DropdownComponent {
   isDropdownActive: boolean = false;
 
   regions: string[] = ['Africa', 'Americas', 'Asia', 'Europe', 'Ocenia'];
-  
   dropdownLabel: string = 'Filter By Region';
 
   onSelect(region: string): void {
