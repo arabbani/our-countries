@@ -115,13 +115,13 @@ i.font-light{
     padding: 10px 20px;
     border-radius:4px;
     box-shadow:0 0 8px rgba(44, 50, 53, 0.3);
+}
+.style-btn{
+    @include btnStyle;
     transition: box-shadow 0.25s;
     &:hover{
         box-shadow: 0 0 12px rgba(44, 50, 53, 0.35);
     }
-}
-.style-btn{
-    @include btnStyle;
 }
 .label-btn{
     @include btnStyle;
@@ -129,12 +129,8 @@ i.font-light{
     padding:5px 15px 7px;
     margin-right:10px;
     margin-bottom:10px;
-    cursor: pointer;
     font-weight:300;
     box-shadow: 0 0 5px rgba(44, 50, 53, 0.2);
-    &:hover{
-        box-shadow: 0 0 8px rgba(44, 50, 53, 0.3);
-    }
 }
 .back-arrow{
     width:15px;

@@ -1,6 +1,6 @@
 <div class="dropdown relative">
-    <div class="dropdown__input dark-mode-bg dark-shadow" (click)="toggleDropdown()" [ngClass]="isDropdownActive ? 'active' : ''">Filter By Region </div>
-    <ul class="dropdown__list dark-mode-bg dark-shadow" [ngClass]="showDropdownMenu ? 'show' : ''">
+    <div class="dropdown__input dark-mode-bg dark-shadow" [ngClass]="{ 'active': isDropdownActive }">{{ dropdownLabel }}</div>
+    <ul class="dropdown__list dark-mode-bg dark-shadow" [ngClass]="{ 'show': showDropdownMenu }">
         <li>
             <a (click)="onSelect('')">All</a>
         </li>

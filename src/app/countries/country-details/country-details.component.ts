@@ -12,11 +12,13 @@ import { CountryService } from '../country.service';
 export class CountryDetailsComponent implements OnInit {
 
   country: Country;
+  borderCountryNames: string[];
 
   constructor(private route: ActivatedRoute, private countryService: CountryService, private location: Location) { }
 
   ngOnInit(): void {
     this.country = this.route.snapshot.data['country'];
+    this.borderCountryNames = this.getBorderCountries();
   }
 
   getBorderCountries(): string[] {
