@@ -28,15 +28,15 @@ export class CountryService {
     return this.http.get<Country>(`${this.apiUrl}/alpha/${countryCode}`);
   }
 
-  getCountryNameByCode(countryCodes: string[]): string[] {
+  mapCountryCodesToCountryDetails(countryCodes: string[]): string[] {
     const countries = this.countries.getValue();
-    let names: string[] = [];
+    let borderCountries: string[] = [];
     countries.forEach(country => {
       if (countryCodes.includes(country.alpha3Code)) {
-        names.push(country.name);
+        borderCountries.push(country);
       }
     });
-    return names;
+    return borderCountries;
   }
 
 }
