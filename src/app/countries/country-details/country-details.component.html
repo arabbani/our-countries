@@ -25,9 +25,12 @@
                 <p>Languages: <i class="font-light">{{ country.languages | toString: 'name' }}</i></p>
             </div>
         </div>
-        <div class="country-border" *ngIf="borderCountryNames.length >= 1">
+        <div class="country-border" *ngIf="borderCountries.length >= 1">
             <span>Border Countries: &nbsp;</span>
-            <span *ngFor="let borderCountry of borderCountryNames" class="label-btn">{{ borderCountry }}</span> 
+            <a *ngFor="let borderCountry of borderCountries" [routerLink]="['../', borderCountry.alpha3Code]">
+              <span class="label-btn">{{ borderCountry.name }}</span> 
+            </a>
+            
         </div>
     </div>
 </div>
