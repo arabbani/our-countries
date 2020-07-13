@@ -11,7 +11,6 @@ export class CountriesComponent implements OnInit {
 
   countries: Country[];
   filteredCountries: Country[];
-
   searchCriteria = {
     name: '',
     region: ''
@@ -22,25 +21,23 @@ export class CountriesComponent implements OnInit {
   ngOnInit(): void {
     this.countryService.getAll().subscribe((response) => {
       this.countries = response;
-      //console.log(this.countries);
       this.filteredCountries = this.countries.slice(0);
     });
   }
 
   searchByName(search: string): void {
-    this.searchCriteria.name = search;
+    this.searchCriteria.name = search.toLowerCase();
     this.filter();
   }
 
   searchByRegion(region: string): void {
-    this.searchCriteria.region = region;
+    this.searchCriteria.region = region.toLowerCase();
     this.filter();
   }
 
   filter(): void {
-    //console.log(this.searchCriteria);
     this.filteredCountries = this.countries.filter(country => {
-      return country.name.toLowerCase().includes(this.searchCriteria.name.toLowerCase()) && country.region.toLowerCase().includes(this.searchCriteria.region.toLowerCase());
+      return country.name.toLowerCase().includes(this.searchCriteria.name) && country.region.toLowerCase().includes(this.searchCriteria.region);
     });
   }
 
