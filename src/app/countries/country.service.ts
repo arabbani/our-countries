@@ -30,7 +30,7 @@ export class CountryService {
 
   mapCountryCodesToCountryDetails(countryCodes: string[]): Country[] {
     const countries = this.countries.getValue();
-    let borderCountries: string[] = [];
+    let borderCountries: Country[] = [];
     countries.forEach(country => {
       if (countryCodes.includes(country.alpha3Code)) {
         borderCountries.push(country);
