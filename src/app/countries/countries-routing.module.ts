@@ -9,14 +9,19 @@ import { CountryResolverService } from './country-resolver.service';
 const routes: Routes = [
   {
     path: 'countries',
-    component: CountriesComponent
-  },
-  {
-    path: 'countries/:countryCode',
-    component: CountryDetailsComponent,
-    resolve: {
-      country: CountryResolverService
-    }
+    children: [
+      {
+        path: ':countryCode',
+        component: CountryDetailsComponent,
+        resolve: {
+          country: CountryResolverService
+        }
+      },
+      {
+        path: '',
+        component: CountriesComponent
+      }
+    ]
   }
 ];
 
