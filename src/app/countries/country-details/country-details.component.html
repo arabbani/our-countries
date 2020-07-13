@@ -27,7 +27,7 @@
         </div>
         <div class="country-border" *ngIf="borderCountries.length >= 1">
             <span>Border Countries: &nbsp;</span>
-            <a *ngFor="let borderCountry of borderCountries" [routerLink]="['../', borderCountry.alpha3Code]">
+            <a class="anchor-no-style" *ngFor="let borderCountry of borderCountries" [routerLink]="['../', borderCountry.alpha3Code]">
               <span class="label-btn">{{ borderCountry.name }}</span> 
             </a>
             
