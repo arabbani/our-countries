@@ -25,9 +25,9 @@
                 <p>Languages: <i class="font-light">{{ country.languages | toString: 'name' }}</i></p>
             </div>
         </div>
-        <div class="country-border" *ngIf="getBorderCountries().length >= 1">
+        <div class="country-border" *ngIf="borderCountryNames.length >= 1">
             <span>Border Countries: &nbsp;</span>
-            <span *ngFor="let borderCountry of getBorderCountries()" class="label-btn">{{ borderCountry }}</span> 
+            <span *ngFor="let borderCountry of borderCountryNames" class="label-btn">{{ borderCountry }}</span> 
         </div>
     </div>
 </div>
