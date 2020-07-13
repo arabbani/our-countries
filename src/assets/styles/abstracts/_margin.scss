@@ -1,0 +1,15 @@
+$count: 5;
+
+$sides: top, right, bottom, left;
+
+@for $index from 1 through $count {
+  .margin-#{$index} {
+    margin: #{$index}rem !important;
+  }
+
+  @each $side in $sides {
+    .margin-#{$side}-#{$index} {
+      margin-#{$side}: #{$index}rem !important;
+    }
+  }
+}

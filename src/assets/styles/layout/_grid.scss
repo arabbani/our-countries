@@ -1,0 +1,52 @@
+$columns: 12;
+
+$breakpoints: 
+'xs' 0 575.98,
+'sm' 576 767.98,
+'md' 768 991.98,
+'lg' 992 1199.98,
+'xl' 1200 0;
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.flex-between{
+  justify-content: space-between;
+}
+.flex-1{
+  flex:1;
+}
+
+
+@for $width from 1 through $columns {
+  $basis: $width / $columns * 100%;
+
+  // .column-#{$width} {
+  //   flex-basis: $basis;
+  // }
+
+  @each $breakpointName, $lowerBound, $upperBound in $breakpoints {
+    @if $lowerBound == 0 {
+      @media (max-width: #{$upperBound}px) { 
+        column-#{$breakpointName}-#{$width} {
+          flex-basis: $basis !important;
+        }
+       }
+    } @else if $upperBound == 0 {
+      @media (min-width: #{$lowerBound}px) { 
+        column-#{$breakpointName}-#{$width} {
+          flex-basis: $basis !important;
+        }
+       }
+    } @else {
+      @media (min-width: #{$lowerBound}px) and (max-width: #{$upperBound}px) {
+        column-#{$breakpointName}-#{$width} {
+          flex-basis: $basis !important;
+        }
+      }
+    }
+  }
+}

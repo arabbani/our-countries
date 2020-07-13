@@ -1,0 +1,11 @@
+<div class="dropdown relative">
+    <div class="dropdown__input dark-mode-bg dark-shadow" (click)="toggleDropdown()" [ngClass]="isDropdownActive ? 'active' : ''">Filter By Region </div>
+    <ul class="dropdown__list dark-mode-bg dark-shadow" [ngClass]="showDropdownMenu ? 'show' : ''">
+        <li>
+            <a (click)="onSelect('')">All</a>
+        </li>
+        <li *ngFor="let region of regions">
+            <a (click)="onSelect(region)">{{ region }}</a>
+        </li> 
+    </ul>
+</div>

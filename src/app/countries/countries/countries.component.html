@@ -1,0 +1,13 @@
+<div class="max max-830">
+    <div class="flex flex-between">
+        <div class="flex-1 relative col-xs-12">
+            <wc-search-box (search)="searchByName($event)"></wc-search-box>
+        </div>
+        <wc-dropdown class="col-xs-12" (filterRegion)="searchByRegion($event)"></wc-dropdown>
+    </div>
+    <div class="flex-row countries-container">
+        <div *ngFor="let country of filteredCountries" class="countries">
+            <wc-country [country]="country"></wc-country>
+        </div>
+    </div>
+</div>

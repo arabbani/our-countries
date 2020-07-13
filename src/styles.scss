@@ -1,1 +1,171 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import 'assets/styles/main';
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
+$dark-secondary: #293846;
+$dark-white: #fff;
+$dark-shadow: #2c3235;
+
+*{
+    box-sizing:border-box;
+}
+body{
+    font-family: 'Lato', sans-serif;
+    color: #111517;
+}
+
+body.dark-mode{
+    color: #fff;
+    background: #202c37;
+    .header, .dark-mode-bg, .label-btn{
+        background: $dark-secondary;
+        color:#fff;
+    }
+    .svg-white path, .back-arrow polygon{
+        fill:$dark-white;
+    }
+    .dropdown__input:before{
+        border-color: #fff transparent transparent transparent;
+    }
+    .dropdown__input.active:before{
+        border-color:transparent transparent #fff transparent;
+    }
+    input{
+        color: #fff;
+    }
+    .header{
+        box-shadow:0 2px 8px $dark-shadow;
+    }
+    .dark-shadow, .label-btn{
+        box-shadow: 0 0 6px $dark-shadow;
+    }
+    .input-search:focus, .dropdown__input.active {
+        box-shadow: 0 0 12px $dark-shadow;
+    }
+    .card{
+        box-shadow: 0 0 8px $dark-shadow;
+    }
+    .style-btn:hover{
+        box-shadow: 0 0 12px $dark-shadow;
+    }
+}
+button{
+    cursor: pointer;
+}
+@mixin maxMargin {
+    margin-left: auto;
+    margin-right: auto;
+}
+.container{
+    max-width:1100px;
+    @include maxMargin;
+    padding-left:30px;
+    padding-right:30px;
+}
+.max{
+    @include maxMargin;
+}
+.header{
+    box-shadow:0 2px 8px rgba(44, 50, 53, 0.05);
+}
+.header__position{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height:52px;
+}
+.card{
+    overflow: hidden;
+    border-radius:4px;
+    height:100%;
+    box-shadow:0 0 8px rgba(44, 50, 53, 0.12);
+    transition: box-shadow .25s, transform .25s;
+    &:hover{
+        box-shadow:0 0 15px rgba(44, 50, 53, 0.3);
+        transform: translate(-1px,-1px);
+    }
+}
+.font-light{
+    font-weight:300;
+}
+i.font-light{
+    font-style: normal;
+}
+.img-cover{
+    width:100%
+}
+.back-btn-space{
+    padding:2rem 0 4rem;
+}
+.mode-svg{
+    width:14px;
+    height:14px;
+    position: relative;
+    top: 2px;
+    left: -12px;
+}
+.svg-color path{
+    fill:#000;
+}
+@mixin btnStyle {
+    background: #fff;
+    border:none;
+    outline:0;
+    padding: 10px 20px;
+    border-radius:4px;
+    box-shadow:0 0 8px rgba(44, 50, 53, 0.3);
+    transition: box-shadow 0.25s;
+    &:hover{
+        box-shadow: 0 0 12px rgba(44, 50, 53, 0.35);
+    }
+}
+.style-btn{
+    @include btnStyle;
+}
+.label-btn{
+    @include btnStyle;
+    display: inline-block;
+    padding:5px 15px 7px;
+    margin-right:10px;
+    margin-bottom:10px;
+    cursor: pointer;
+    font-weight:300;
+    box-shadow: 0 0 5px rgba(44, 50, 53, 0.2);
+    &:hover{
+        box-shadow: 0 0 8px rgba(44, 50, 53, 0.3);
+    }
+}
+.back-arrow{
+    width:15px;
+    height:15px;
+    vertical-align: top;
+    margin-right:10px;
+}
+.country-details{
+    font-size:1.5rem;
+    h2{
+        margin:0 0 1rem;
+    }
+}
+.country-info {
+    p{
+        margin:6px 0;
+    }
+}
+.pr-20{
+    padding-right:2rem;
+}
+
+
+
+@media (max-width: 576px) {
+    .container{
+        padding-left:20px;
+        padding-right:20px;
+    }
+    .col-xs-12{
+        width:100%;
+    }
+    
+}

@@ -1,0 +1,67 @@
+@mixin drop-common {
+    font-size: 1.5rem;
+    border-radius: .5rem;
+    box-shadow: 0 0 6px rgba(44, 50, 53, 0.09);
+}
+.dropdown{
+    z-index:99;
+}
+.dropdown__input{
+    padding: 14px 35px 14px 14px;
+    position: relative;
+    cursor: pointer;
+    @include drop-common;
+    transition: box-shadow .25s;
+    white-space: nowrap;
+    &.active{
+        box-shadow:0 0 12px rgba(44, 50, 53, 0.18);
+        &:before{
+            border-width: 0 4px 4px 4px;
+            border-color: transparent transparent #535353 transparent;
+        }
+    }
+    &:before{
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 12px;
+        bottom: 0;
+        margin: auto;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 4px 4px 0 4px;
+        border-color: #535353 transparent transparent transparent;
+    }
+}
+.dropdown__list{
+    @include drop-common;
+    margin:0;
+    position: absolute;
+    width: 100%;
+    top: 52px;
+    padding:15px 0;
+    z-index:999;
+    background: #fff;
+    max-height: 250px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    opacity:0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all .25s;
+    &.show{
+        transform: translateY(0);
+        opacity:1;
+        visibility: visible;
+    }
+    li{
+        padding:5px 15px;
+        display: block;
+        cursor: pointer;
+        transition: transform .25s;
+        &:hover{
+            transform: translateX(4px);
+        }
+    }
+}

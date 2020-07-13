@@ -1,0 +1,33 @@
+<div class="back-btn-space">
+    <button (click)="goBack()" class="style-btn dark-mode-bg dark-shadow">
+        <svg x="0px" y="0px" viewBox="-331 132.3 296.8 296.8" class="back-arrow">
+            <polygon points="-331,279.8 -249.3,330.1 -249.3,296.6 -34.3,296.6 -34.3,263.6 -249.3,263.6 -249.3,231.1 "/>
+        </svg>Back
+    </button>
+</div>
+<div class="flex ">
+    <div class="flag country-flag">
+         <img class="img-cover" [src]="country.flag"> 
+    </div>
+    <div class="country-details">
+        <h2>{{ country.name }}</h2>
+        <div class="flex">
+            <div class="country-info">
+                <p>Native Name: <i class="font-light">{{ country.nativeName }}</i></p>
+                <p>Population: <i class="font-light">{{ country.population }}</i></p>
+                <p>Region: <i class="font-light">{{ country.region }}</i></p>
+                <p>Sub Region: <i class="font-light">{{ country.subregion }}</i></p>
+                <p>Capital: <i class="font-light">{{ country.capital }}</i></p>
+            </div>
+            <div class="country-info">
+                <p>Top Level Domains: <i class="font-light">{{ country.topLevelDomain.join(', ') }}</i></p>
+                <p>Currencies: <i class="font-light">{{ country.currencies | toString: 'name' }}</i></p>
+                <p>Languages: <i class="font-light">{{ country.languages | toString: 'name' }}</i></p>
+            </div>
+        </div>
+        <div class="country-border">
+            <span>Border Countries: &nbsp;</span> 
+            <span *ngFor="let borderCountry of getBorderCountries()" class="label-btn">{{ borderCountry }}</span> 
+        </div>
+    </div>
+</div>

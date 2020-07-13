@@ -1,0 +1,30 @@
+.card__image_holder{
+    height:160px;
+    overflow: hidden;
+}
+.card__image{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.card__details{
+    padding:2rem 1.5rem 2.5rem;
+    line-height:1.4;
+    font-size:1.5rem;
+    h2{
+        margin:0 0 1.3rem;
+        font-size: 2rem;
+    }
+}
+@media (max-width: 576px) {
+    .card__image_holder{
+        height:280px;
+    }
+}
+@media (max-width: 480px) {
+    .card__image_holder{
+        height:auto;
+    }
+}
