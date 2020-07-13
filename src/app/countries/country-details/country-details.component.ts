@@ -12,17 +12,20 @@ import { CountryService } from '../country.service';
 export class CountryDetailsComponent implements OnInit {
 
   country: Country;
-  borderCountryNames: string[];
+  borderCountries: Country[];
 
   constructor(private route: ActivatedRoute, private countryService: CountryService, private location: Location) { }
 
   ngOnInit(): void {
-    this.country = this.route.snapshot.data['country'];
-    this.borderCountryNames = this.getBorderCountries();
+    this.route.data.subscribe(data => {
+      this.country = data['country'];
+      this.borderCountries = this.getBorderCountries();
+    });
+    
   }
 
   getBorderCountries(): string[] {
-    return this.countryService.getCountryNameByCode(this.country.borders);
+    return this.countryService.mapCountryCodesToCountryDetails(this.country.borders);
   }
 
   goBack(): void {
