@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'wc-dropdown',
@@ -15,10 +15,11 @@ export class DropdownComponent {
   regions: string[] = ['Africa', 'Americas', 'Asia', 'Europe', 'Ocenia'];
   selectedRegions: string = "Filter By Region";
 
-  toggleDropdown(){
+  /*toggleDropdown(e: Event){
+      console.log('Clicked outside:', e);
       this.showDropdownMenu = !this.showDropdownMenu;       
       this.isDropdownActive = !this.isDropdownActive;       
-  }
+  }*/
 
   onSelect(region: string): void {
     this.filterRegion.emit(region);
