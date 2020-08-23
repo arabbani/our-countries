@@ -12,7 +12,7 @@ export class DropdownComponent {
 
   showDropdownMenu: boolean = false;
 
-  regions: string[] = ['Africa', 'Americas', 'Asia', 'Europe', 'Ocenia'];
+  regions: string[] = ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania'];
   dropdownLabel: string = 'Filter By Region';
 
   onSelect(region: string): void {
