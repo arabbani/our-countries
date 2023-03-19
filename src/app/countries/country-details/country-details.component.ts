@@ -19,8 +19,8 @@ export class CountryDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.route.data.subscribe(data => {
       this.country = data['country'];
-      this.borderCountries = this.getBorderCountries();
       console.log('COMP ', this.country);
+      this.borderCountries = this.getBorderCountries();
       console.log('COMP ', this.borderCountries);
     });
     
