@@ -16,12 +16,11 @@
                 <p>Official Name: <i class="font-light">{{ country.name.official }}</i></p>
                 <p>Population: <i class="font-light">{{ country.population }}</i></p>
                 <p>Region: <i class="font-light">{{ country.region }}</i></p>
-                <p>Sub Region: <i class="font-light">{{ country.subregion }}</i></p>
-                <p *ngIf="country.capital">Capital: <i class="font-light">{{ country.capital[0] }}</i></p>
             </div>
             <div class="country-info">
                 <p>Top Level Domains: <i class="font-light">{{ country.tld.join(', ') }}</i></p>
-                <p>Currencies: <i class="font-light">{{ country.currencies.GTQ.name }}</i></p>
+                <p>Sub Region: <i class="font-light">{{ country.subregion }}</i></p>
+                <p *ngIf="country.capital">Capital: <i class="font-light">{{ country.capital[0] }}</i></p>
             </div>
         </div>
         <div class="country-border" *ngIf="borderCountries.length >= 1">
