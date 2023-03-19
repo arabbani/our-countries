@@ -2,7 +2,7 @@ import { Language } from './language';
 import { Currency } from './currency';
 
 export interface Country {
-    name: string;
+    name: Record<string, string>;
     cioc: string;
     capital: string;
     flags: Record<string, string>;
