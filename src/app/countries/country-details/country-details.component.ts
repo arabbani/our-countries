@@ -18,16 +18,13 @@ export class CountryDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.data.subscribe(data => {
-      this.country = data['country'];
-      console.log('COMP ', this.country);
+      this.country = data['country'][0];
       this.borderCountries = this.getBorderCountries();
-      console.log('COMP ', this.borderCountries);
     });
     
   }
 
   getBorderCountries(): Country[] {
-    console.log('BOR ', this.country.borders);
     return this.countryService.mapCountryCodesToCountryDetails(this.country.borders);
   }
 
