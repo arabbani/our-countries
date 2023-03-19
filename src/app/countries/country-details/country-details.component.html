@@ -7,10 +7,10 @@
 </div>
 <div class="flex ">
     <div class="flag country-flag">
-         <img class="img-cover" [src]="country.flag"> 
+         <img class="img-cover" [src]="country.flags.svg"> 
     </div>
     <div class="country-details">
-        <h2>{{ country.name }}</h2>
+        <h2>{{ country.name.common }}</h2>
         <div class="flex">
             <div class="country-info">
                 <p>Native Name: <i class="font-light">{{ country.nativeName }}</i></p>
@@ -28,7 +28,7 @@
         <div class="country-border" *ngIf="borderCountries.length >= 1">
             <span>Border Countries: &nbsp;</span>
             <a class="anchor-no-style" *ngFor="let borderCountry of borderCountries" [routerLink]="['../', borderCountry.alpha3Code]">
-              <span class="label-btn">{{ borderCountry.name }}</span> 
+              <span class="label-btn">{{ borderCountry.name.common }}</span> 
             </a>
             
         </div>

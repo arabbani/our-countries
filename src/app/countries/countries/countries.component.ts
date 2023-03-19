@@ -37,7 +37,7 @@ export class CountriesComponent implements OnInit {
 
   filter(): void {
     this.filteredCountries = this.countries.filter(country => {
-      return country.name.toLowerCase().includes(this.searchCriteria.name) && country.region.toLowerCase().includes(this.searchCriteria.region);
+      return country.name.common.toLowerCase().includes(this.searchCriteria.name) && country.region.toLowerCase().includes(this.searchCriteria.region);
     });
   }
 
