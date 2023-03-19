@@ -4,14 +4,13 @@ import { Currency } from './currency';
 export interface Country {
     name: Record<string, string>;
     cioc: string;
-    capital: string;
+    capital: any;
     flags: Record<string, string>;
     population: number;
     region: string;
     subregion: string;
-    languages: Language[];
-    currencies: Currency[];
-    nativeName: string;
+    languages: any;
+    currencies: any;
     tld: string[];
     borders: string[];
 }

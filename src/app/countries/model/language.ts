@@ -1,3 +1,3 @@
 export interface Language {
-    name: string;
+    spa: string;
 }
