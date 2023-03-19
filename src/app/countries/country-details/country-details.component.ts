@@ -12,7 +12,7 @@ import { CountryService } from '../country.service';
 export class CountryDetailsComponent implements OnInit {
 
   country: Country;
-  borderCountries: Country[];
+  borderCountries: Country[] = [];
 
   constructor(private route: ActivatedRoute, private countryService: CountryService, private location: Location) { }
 
@@ -25,7 +25,10 @@ export class CountryDetailsComponent implements OnInit {
   }
 
   getBorderCountries(): Country[] {
-    return this.countryService.mapCountryCodesToCountryDetails(this.country.borders);
+    if (this.country.borders) {
+      return this.countryService.mapCountryCodesToCountryDetails(this.country.borders);
+    }
+    return [];
   }
 
   goBack(): void {
