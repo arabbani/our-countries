@@ -27,6 +27,7 @@ export class CountryDetailsComponent implements OnInit {
   }
 
   getBorderCountries(): Country[] {
+    console.log('BOR ', this.country.borders);
     return this.countryService.mapCountryCodesToCountryDetails(this.country.borders);
   }
 

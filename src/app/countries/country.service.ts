@@ -32,7 +32,7 @@ export class CountryService {
     const countries = this.countries.getValue();
     let borderCountries: Country[] = [];
     console.log('CO ', countries);
-    console.log('CODES ', countryCodes);
+    console.log('CODES ', countryCodes.toString());
     countries.forEach(country => {
       if (countryCodes.includes(country.cioc)) {
         borderCountries.push(country);
