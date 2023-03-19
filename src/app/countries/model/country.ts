@@ -3,9 +3,9 @@ import { Currency } from './currency';
 
 export interface Country {
     name: string;
-    alpha3Code: string;
+    cioc: string;
     capital: string;
-    flag: string;
+    flags: Record<string, string>;
     population: number;
     region: string;
     subregion: string;
