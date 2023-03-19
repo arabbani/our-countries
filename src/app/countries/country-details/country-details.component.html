@@ -20,7 +20,7 @@
                 <p *ngIf="country.capital">Capital: <i class="font-light">{{ country.capital }}</i></p>
             </div>
             <div class="country-info">
-                <p>Top Level Domains: <i class="font-light">{{ country.topLevelDomain.join(', ') }}</i></p>
+                <p>Top Level Domains: <i class="font-light">{{ country.tld.join(', ') }}</i></p>
                 <p>Currencies: <i class="font-light">{{ country.currencies | toString: 'name' }}</i></p>
                 <p>Languages: <i class="font-light">{{ country.languages | toString: 'name' }}</i></p>
             </div>
