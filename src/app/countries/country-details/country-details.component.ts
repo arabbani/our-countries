@@ -20,6 +20,7 @@ export class CountryDetailsComponent implements OnInit {
     this.route.data.subscribe(data => {
       this.country = data['country'][0];
       this.borderCountries = this.getBorderCountries();
+      console.log(this.borderCountries)
     });
     
   }

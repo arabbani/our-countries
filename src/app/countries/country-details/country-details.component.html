@@ -13,21 +13,21 @@
         <h2>{{ country.name.common }}</h2>
         <div class="flex">
             <div class="country-info">
-                <p>Native Name: <i class="font-light">{{ country.nativeName }}</i></p>
+                <p>Native Name: <i class="font-light">{{ country.name.nativeName.spa.official }}</i></p>
                 <p>Population: <i class="font-light">{{ country.population }}</i></p>
                 <p>Region: <i class="font-light">{{ country.region }}</i></p>
                 <p>Sub Region: <i class="font-light">{{ country.subregion }}</i></p>
-                <p *ngIf="country.capital">Capital: <i class="font-light">{{ country.capital }}</i></p>
+                <p *ngIf="country.capital">Capital: <i class="font-light">{{ country.capital[0] }}</i></p>
             </div>
             <div class="country-info">
                 <p>Top Level Domains: <i class="font-light">{{ country.tld.join(', ') }}</i></p>
-                <p>Currencies: <i class="font-light">{{ country.currencies | toString: 'name' }}</i></p>
-                <p>Languages: <i class="font-light">{{ country.languages | toString: 'name' }}</i></p>
+                <p>Currencies: <i class="font-light">{{ country.currencies.GTQ.name }}</i></p>
+                <p>Languages: <i class="font-light">{{ country.languages.spa }}</i></p>
             </div>
         </div>
         <div class="country-border" *ngIf="borderCountries.length >= 1">
             <span>Border Countries: &nbsp;</span>
-            <a class="anchor-no-style" *ngFor="let borderCountry of borderCountries" [routerLink]="['../', borderCountry.alpha3Code]">
+            <a class="anchor-no-style" *ngFor="let borderCountry of borderCountries" [routerLink]="['../', borderCountry.cioc]">
               <span class="label-btn">{{ borderCountry.name.common }}</span> 
             </a>
             
