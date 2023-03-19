@@ -32,7 +32,7 @@ export class CountryService {
     const countries = this.countries.getValue();
     let borderCountries: Country[] = [];
     countries.forEach(country => {
-      if (countryCodes.includes(country.alpha3Code)) {
+      if (countryCodes.includes(country.cioc)) {
         borderCountries.push(country);
       }
     });
